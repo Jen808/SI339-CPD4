@@ -1,0 +1,375 @@
+/* =====================================================
+Import
+===================================================== */
+
+
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css');
+
+
+/* =====================================================
+Default color set
+===================================================== */
+
+:root {
+
+    --color-colombia-blue: #9BDDFF;
+    --color-dark: #213A57;
+    --color-medium: #0B6477;
+    --color-background: #DCF5FA;
+    --color-background-deep: #F0FCFE;
+    --color-hover: #04A0BC;
+    --color-green: #25A18E;
+    --color-lightgreen: #7AE582;
+    --color-blue: #00A5CF;
+
+
+    --color-darkmode-grey: #2D2D2D;
+    --color-darkmode-deepblue: #37393d;
+    --color-darkmode-dark-grey: #1a1a1a;
+    --color-darkmode-mid-grey: #242424;
+    --color-darkmode-header: #4a4a4a;
+    --color-darkmode-light-grey: #666666;
+    --color-darkmode-green: #43bfac;
+    --color-darkmode-blue: #22beda;
+
+}
+
+
+/* =====================================================
+Screen setting - Default: Light Mode
+===================================================== */
+
+html {
+    font-size: 16px;
+    line-height: 1.5;
+    scroll-behavior: smooth;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: auto;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    color: #000;
+    background-color: var(--color-background);
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: auto;
+
+}
+
+
+
+@media (prefers-color-scheme: dark) {
+    body {
+        color: #FFF;
+        background-color: var(--color-darkmode-grey);
+
+    }
+
+}
+
+
+@media (prefers-contrast: more) {
+    body {
+        background-color: #FFF;
+        color: #000;
+    }
+
+
+}
+
+
+@media (prefers-reduced-motion) {}
+
+
+
+
+/* =====================================================
+Screen setting - Default: Light Mode
+===================================================== */
+
+.mens-team,
+.womens-team,
+.meets {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-background-deep);
+}
+
+
+
+.title {
+    font-size: 22px;
+    font-weight: 700;
+    text-align: center;
+    background-color: var(--color-colombia-blue);
+    width: 100%;
+    padding: 20px 0;
+    animation: slideInDown 0.5s ease-in;
+
+}
+
+
+
+.button {
+    width: 100%;
+}
+
+
+.meets a,
+.womens-team a,
+.mens-team a {
+    text-wrap: wrap;
+    font-size: 18px;
+    line-height: 20px;
+    text-align: center;
+    color: var(--color-dark);
+    width: 80%;
+    font-weight: 600;
+    padding: 20px 10%;
+}
+
+a {
+    text-align: center;
+}
+
+
+.button:nth-child(even) {
+    background-color: var(--color-background);
+}
+
+.home {
+    text-align: center;
+    width: 100vw;
+    font-weight: 800;
+    color: var(--color-dark);
+    padding-top: 10vh;
+    font-size: 30px;
+    font-family: "Roboto", sans-serif;
+
+
+}
+
+
+.main-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 80vh;
+    gap: 5vw;
+
+}
+
+#button-main {
+    background-color: var(--color-dark);
+    color: #FFF;
+    font-family: "Roboto", sans-serif;
+    font-weight: 800;
+    width: 50vw;
+    padding: 5vw;
+    border-radius: 30vw;
+    animation: fadeInDown 1s ease-in;
+
+
+}
+
+@media (prefers-color-scheme: dark) {
+
+    .mens-team,
+    .womens-team,
+    .meets {
+        background-color: var(--color-darkmode-grey);
+    }
+
+
+
+    .title {
+
+        background-color: var(--color-colombia-blue);
+
+    }
+
+
+
+    .meets a,
+    .womens-team a,
+    .mens-team a {
+
+        color: var(--color-dark);
+
+    }
+
+
+
+    .button:nth-child(even) {
+        background-color: var(--color-background);
+    }
+
+    .home {
+
+        color: var(--color-dark);
+    }
+
+
+    #button-main {
+        background-color: var(--color-dark);
+    }
+
+}
+
+
+@media (prefers-contrast: more) {
+    .mens-team,
+    .womens-team,
+    .meets {
+        background-color: var(--color-background-deep);
+    }
+
+
+
+    .title {
+
+        background-color: var(--color-colombia-blue);
+
+    }
+
+
+
+    .meets a,
+    .womens-team a,
+    .mens-team a {
+
+        color: var(--color-dark);
+
+    }
+
+
+
+    .button:nth-child(even) {
+        background-color: var(--color-background);
+    }
+
+    .home {
+
+        color: var(--color-dark);
+    }
+
+
+    #button-main {
+        background-color: var(--color-dark);
+    }
+}
+
+
+@media (prefers-reduced-motion) {
+
+#button-main,
+.title{
+    animation: none;   
+}
+}
+
+
+
+
+
+
+
+
+/* =====================================================
+Navigation
+===================================================== */
+
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    height: 3em;
+    width: auto;
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-around;
+    list-style-type: none;
+    background-color: var(--color-colombia-blue);
+    height: 3em;
+    align-items: center;
+
+
+}
+
+nav ul li a {
+    color: #000;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+nav ul li a:hover {
+    color: var(--color-hover);
+}
+
+nav {
+    height: auto;
+}
+
+nav ul {
+    display: flex;
+    flex-direction: row;
+    height: 3.5em;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    padding: 0.4em 0;
+}
+
+nav ul li a {
+    font-size: 0.8rem;
+
+}
+
+
+
+@media (prefers-color-scheme: dark) {
+    nav ul {
+        background-color: var(--color-darkmode-dark-grey);
+
+    }
+
+    nav ul li a {
+        color: var(--color-colombia-blue);
+    }
+
+    nav ul li a:hover {
+        color: var(--color-hover);
+    }
+
+
+
+}
+
+
+@media (prefers-contrast: more) {
+    nav ul {
+        background-color: #000;
+    }
+
+    nav ul li a {
+        color: #FFF;
+    }
+
+    nav ul li a:hover {
+        color: blue
+    }
+
+}
