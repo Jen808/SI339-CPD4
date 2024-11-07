@@ -54,18 +54,35 @@ def gen_athlete_page(data, outfile):
 
       <link rel = "stylesheet" href = "css/reset.css">
       <link rel = "stylesheet" href = "css/style.css">
+      <script defer src="script.js"></script>
+
       
 
       <title>{data["name"]}</title>
    </head>
    <body>
-   <a href = "#main">Skip to Main Content</a>
-   <nav>
-     <ul>
-        <li><a href="index.html">Home Page</a></li>
-        <li><a href="mens.html">Men's Team</a></li>
-        <li><a href="womens.html">Women's Team</a></li>
-     </ul>
+      <a href="#main">Skip to Main Content</a>
+
+   <div class="main-header">
+      <div class="name">
+         <img src="\AASKYLINELOGO.png" class="logo-img">
+         <div class="logo">Skyline High School</div>
+      </div>
+
+      <div class="toggle-menu" id="toggle-menu">
+         <span class="line1"></span>
+         <span class="line2"></span>
+         <span class="line3"></span>
+      </div>
+   </div>
+
+   <nav id="navbar">
+      <ul>
+         <li><a href="index.html">Home Page</a></li>
+         <li><a href="mens.html">Men's Team</a></li>
+         <li><a href="womens.html">Women's Team</a></li>
+         <li><a href="meets.html">Meets</a></li>
+      </ul>
    </nav>
    <header>
       <!--Athlete would input headshot-->

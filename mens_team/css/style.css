@@ -153,7 +153,7 @@ a[href="#main"]:focus {
 /* =====================================================
 Navigation
 ===================================================== */
-
+/* 
 nav {
     position: sticky;
     top: 0;
@@ -238,7 +238,7 @@ nav ul li a {
         color: blue
     }
 
-}
+} */
 
 
 
@@ -260,7 +260,7 @@ header {
     height: auto;
     padding: 2em 0;
     position: sticky;
-    top: 3em;
+    top: 120px;
     background-color: #FFF;
     z-index: 100;
     display: flex;
@@ -268,7 +268,7 @@ header {
     align-items: center;
     justify-content: space-around;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    animation: bounceInDown 1s ease-in-out;
+    animation: slideInDown 1s ease-in-out;
 
 }
 
@@ -292,7 +292,7 @@ header img {
 
     header {
         flex-direction: column;
-        top: 3.5em;
+        top: 100px;
         padding: 1em 0;
     }
 
@@ -310,25 +310,6 @@ header img {
 
 }
 
-
-/* 
-
-header {
-    flex-direction: column;
-    top: 3.5em;
-    padding: 1em 0;
-}
-
-header h1 {
-    margin-bottom: 0.5em;
-}
-
-header img {
-    width: 5em;
-    border-radius: 0.6em;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-
-} */
 
 
 
@@ -373,7 +354,7 @@ main h2 {
     font-size: 1.2rem;
     font-weight: 600;
     margin: 1.4em 0em;
-    animation: tada 1s ease-in-out;
+    animation: slideInLeft 1s ease-in-out;
 
 
 }
@@ -394,9 +375,9 @@ table {
     border-collapse: collapse;
     margin-bottom: 20px;
     table-layout: fixed;
-    animation: bounceIn 1s ease-in-out;
+    animation: fadeIn 1s ease-in;
 
-    
+
 }
 
 thead tr {
@@ -430,8 +411,8 @@ thead th {
     border: 1px solid #ddd;
     text-wrap: wrap !important;
     font-weight: 500;
-    
-    
+
+
 }
 
 
@@ -502,64 +483,7 @@ thead th {
 
 }
 
-/* 
-table,
-thead,
-tbody,
-th,
-td,
-tr {
-    display: block;
-}
 
-tbody tr {
-    margin-bottom: 15px;
-    border: 1px solid #ddd;
-    padding: 1em;
-}
-
-thead tr {
-    padding: 1em;
-    border: 1px solid #ddd;
-    margin-bottom: 15px;
-
-}
-
-
-tbody td {
-    border: 0;
-    border-bottom: 1px solid #ddd;
-    text-align: left;
-    justify-content: flex-start;
-
-}
-
-thead th {
-    border: 0;
-    border-bottom: 1px solid var(--color-colombia-blue);
-    text-align: left;
-    justify-content: flex-start;
-}
-
-
-tbody td:last-child,
-thead th:last-child {
-    border-bottom: none;
-}
-
-main h2 {
-    margin-bottom: 1em;
-    text-align: center;
-}
-
-
-thead tr,
-tbody tr,
-.result-row {
-    border-radius: 1em;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-
-} */
 
 
 
@@ -638,12 +562,12 @@ tbody tr,
         color: #000;
     }
 
-    /* @media (max-width: 768px) {
+    @media (max-width: 768px) {
         tbody td {
             border: 0;
             border-bottom: 1px solid #000;
         }
-    } */
+    }
 
     tbody td {
         border: 0;
@@ -805,3 +729,149 @@ body::after {
 
 
 }
+
+
+
+
+/* =====================================================
+Reduce Motion
+===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    table,
+    header,
+    main h2 {
+        animation: none;
+        transition: none;
+    }
+}
+
+
+
+
+
+
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    position: sticky;
+    top: 0;
+    height: 100px;
+ }
+
+ .name {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+ }
+
+ .logo-img{
+    width: 50px;
+    height: 50px;
+ }
+ /* Logo */
+ .logo {
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-decoration: none;
+    list-style: none;
+    color: var(--color-colombia-blue);
+ }
+
+ .logo li {
+    list-style: none;
+ }
+
+ /* Hamburger icon */
+ .toggle-menu {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    position: relative;
+    z-index: 1000; /* Ensure toggle is above the menu */
+ }
+
+ /* Hamburger icon lines */
+ .toggle-menu span {
+    height: 3px;
+    width: 35px;
+    background-color: white;
+    margin: 4px 0;
+    transition: 0.3s ease; /* Smooth transition for animation */
+ }
+
+ /* Cross effect for "X" when active */
+ .toggle-menu.active .line1 {
+    transform: rotate(45deg) translate(7.5px, 7.5px);
+ }
+
+ .toggle-menu.active .line2 {
+    opacity: 0; /* Hide middle line */
+ }
+
+ .toggle-menu.active .line3 {
+    transform: rotate(-45deg) translate(7.5px, -7.5px);
+ }
+
+ /* Desktop navigation menu */
+ nav {
+    background-color: #333;
+ }
+
+ nav ul {
+    list-style-type: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+ }
+
+ nav ul li {
+    padding: 10px 20px;
+ }
+
+ nav ul li a {
+    color: white;
+    text-decoration: none;
+ }
+
+ /* Responsive Mobile Styles */
+ @media (max-width: 768px) {
+    /* Show toggle menu for mobile */
+    .toggle-menu {
+       display: flex;
+    }
+
+    /* Initially hide navbar on mobile */
+    nav {
+       display: none;
+       flex-direction: column;
+       background-color: #333;
+       padding-top: 10px;
+    }
+
+    /* Show navbar when active (toggled by JavaScript) */
+    nav.active {
+       display: flex;
+    }
+
+    nav ul {
+       flex-direction: column;
+       width: 100%;
+    }
+
+    nav ul li {
+       text-align: center;
+       padding: 15px;
+       border-top: 1px solid #444;
+    }
+ }
+
+
+ 

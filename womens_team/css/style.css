@@ -66,6 +66,7 @@ body {
 
 
 
+
 @media (prefers-color-scheme: dark) {
 
     body {
@@ -163,6 +164,7 @@ nav {
 
 nav ul {
     display: flex;
+    flex-direction: row;
     justify-content: space-around;
     list-style-type: none;
     background-color: var(--color-colombia-blue);
@@ -182,28 +184,6 @@ nav ul li a:hover {
     color: var(--color-hover);
 }
 
-/* @media (max-width: 768px) {
-
-    nav {
-        height: auto;
-    }
-
-    nav ul {
-        display: flex;
-        flex-direction: row;
-        height: 3.5em;
-    }
-
-    nav ul li {
-        padding: 0.4em 0;
-    }
-
-    nav ul li a {
-        font-size: 0.8rem;
-
-    } 
-
-} */
 
 nav {
     height: auto;
@@ -223,6 +203,7 @@ nav ul li a {
     font-size: 0.8rem;
 
 }
+
 
 
 
@@ -287,7 +268,7 @@ header {
     align-items: center;
     justify-content: space-around;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    animation: bounceInDown 1s ease-in-out;
+    animation: slideInDown 1s ease-in-out;
 
 }
 
@@ -307,7 +288,7 @@ header img {
 }
 
 
-/* @media (max-width: 768px) {
+@media (max-width: 768px) {
 
     header {
         flex-direction: column;
@@ -327,24 +308,10 @@ header img {
     }
 
 
-} */
-
-header {
-    flex-direction: column;
-    top: 3.5em;
-    padding: 1em 0;
 }
 
-header h1 {
-    margin-bottom: 0.5em;
-}
 
-header img {
-    width: 5em;
-    border-radius: 0.6em;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 
-}
 
 @media (prefers-color-scheme: dark) {
     header {
@@ -387,7 +354,7 @@ main h2 {
     font-size: 1.2rem;
     font-weight: 600;
     margin: 1.4em 0em;
-    animation: tada 1s ease-in-out;
+    animation: slideInLeft 1s ease-in-out;
 
 
 }
@@ -395,7 +362,6 @@ main h2 {
 section {
     margin-bottom: 30px;
 }
-
 
 
 
@@ -409,7 +375,8 @@ table {
     border-collapse: collapse;
     margin-bottom: 20px;
     table-layout: fixed;
-    animation: tada 1s ease-in-out;
+    animation: fadeIn 1s ease-in;
+
 
 }
 
@@ -444,6 +411,8 @@ thead th {
     border: 1px solid #ddd;
     text-wrap: wrap !important;
     font-weight: 500;
+
+
 }
 
 
@@ -451,7 +420,7 @@ thead th {
 
 
 
-/* @media (max-width: 768px) {
+@media (max-width: 768px) {
 
     table,
     thead,
@@ -512,66 +481,10 @@ thead th {
     }
 
 
-} */
-
-
-table,
-thead,
-tbody,
-th,
-td,
-tr {
-    display: block;
-}
-
-tbody tr {
-    margin-bottom: 15px;
-    border: 1px solid #ddd;
-    padding: 1em;
-}
-
-thead tr {
-    padding: 1em;
-    border: 1px solid #ddd;
-    margin-bottom: 15px;
-
 }
 
 
-tbody td {
-    border: 0;
-    border-bottom: 1px solid #ddd;
-    text-align: left;
-    justify-content: flex-start;
 
-}
-
-thead th {
-    border: 0;
-    border-bottom: 1px solid var(--color-colombia-blue);
-    text-align: left;
-    justify-content: flex-start;
-}
-
-
-tbody td:last-child,
-thead th:last-child {
-    border-bottom: none;
-}
-
-main h2 {
-    margin-bottom: 1em;
-    text-align: center;
-}
-
-
-thead tr,
-tbody tr,
-.result-row {
-    border-radius: 1em;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-
-}
 
 
 @media (prefers-color-scheme: dark) {
@@ -606,17 +519,12 @@ tbody tr,
         color: var(--color-colombia-blue);
     }
 
-    /* @media (max-width: 768px) {
-        tbody td {
-            border: 0;
-            border-bottom: 1px solid var(--color-darkmode-header);
-        }
-    } */
 
     tbody td {
         border: 0;
         border-bottom: 1px solid var(--color-darkmode-header);
     }
+
 
 
 }
@@ -654,17 +562,18 @@ tbody tr,
         color: #000;
     }
 
-    /* @media (max-width: 768px) {
+    @media (max-width: 768px) {
         tbody td {
             border: 0;
             border-bottom: 1px solid #000;
         }
-    } */
+    }
 
     tbody td {
         border: 0;
         border-bottom: 1px solid #000;
     }
+
 
 }
 
@@ -754,6 +663,8 @@ footer a:hover {
 
 
 
+
+
 /* =====================================================
 FAB Icon
 ===================================================== */
@@ -818,3 +729,25 @@ body::after {
 
 
 }
+
+
+
+
+/* =====================================================
+Reduce Motion
+===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+    table,
+    header,
+    main h2{
+        animation: none;
+        transition: none;
+    }
+}
+
+
+
+
+
+
